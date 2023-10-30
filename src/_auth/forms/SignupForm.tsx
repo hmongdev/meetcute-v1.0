@@ -1,4 +1,4 @@
-// importts
+// imports
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 // form
@@ -14,24 +14,25 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
- 
-// 1. shape of form using Zod schema
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-});
+// validation Schemas
+import { SignupValidation } from "@/lib/validation";
+
 
 const SignupForm = () => {
-  
-   // 2. Define your form.
-   const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      username: "",
+   // 1. Define your form.
+   const form = useForm<z.infer<typeof SignupValidation>>({
+    resolver: zodResolver(SignupValidation),
+      defaultValues: {
+        name: "",
+        username: "",
+        email: "",
+        password
+          : "",
     },
    })
   
-   // 3. Define a submit handler.
-   function onSubmit(values: z.infer<typeof formSchema>) {
+   // 2. Define a submit handler.
+   function onSubmit(values: z.infer<typeof SignupValidation>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values)
