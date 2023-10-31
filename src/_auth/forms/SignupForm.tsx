@@ -1,22 +1,18 @@
 // imports
-import * as z from "zod"
+import {z} from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 // form
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import Loader from "@/components/shared/Loader"
 import { useForm } from "react-hook-form"
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage,
 } from "@/components/ui/form";
 // validation Schemas
 import { SignupValidation } from "@/lib/validation";
-import Loader from "@/components/shared/Loader"
 import { Link } from "react-router-dom"
+// appwrite
+import { createUserAccount } from "@/lib/appwrite/api"
 
 
 const SignupForm = () => {
@@ -29,16 +25,15 @@ const SignupForm = () => {
         name: "",
         username: "",
         email: "",
-        password
-          : "",
+        password: "",
     },
    })
   
    // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
-    // create the user on submit => async action that takes time
-    // const newUser = await createUserAccount(values);
-     console.log(values)
+    // create the user => async action that takes time
+    const newUser = await createUserAccount(values);
+    console.log(newUser)
   }
  
   return (
@@ -48,7 +43,7 @@ const SignupForm = () => {
         
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">Create A New Account</h2>
         <p className="text-light-3 small-medium md:base-regular">
-          To use meetcute, please enter your details
+          To use meetcute, please create an account.
         </p>
       
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-5 w-full mt-4">
@@ -102,7 +97,7 @@ const SignupForm = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input type="text" className="shad-input" placeholder="Password" {...field} />
+                    <Input type="password" className="shad-input" placeholder="Password" {...field} />
                   </FormControl>
                 <FormMessage />
               </FormItem>
