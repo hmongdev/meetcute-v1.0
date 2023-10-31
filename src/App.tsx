@@ -10,6 +10,8 @@ import SignupForm from './_auth/forms/SignupForm';
 // root
 import { RootLayout } from './_root/pages/RootLayout';
 import { Home } from './_root/pages';
+// toast
+import { Toaster } from './components/ui/toaster';
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
           <Route index element={<Home />} />      
         </Route>
       </Routes>
+      
+      <Toaster />
   </main>
   )
 }
