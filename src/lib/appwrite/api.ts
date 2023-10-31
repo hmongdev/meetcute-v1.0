@@ -1,10 +1,15 @@
 // appwrite
-import { ID } from "appwrite";
-import { account, appwriteConfig, avatars, databases } from "./config";
-// types => interfaces
-import { INewUser } from "@/types";
+import { ID, Query } from "appwrite";
+// config
+import { appwriteConfig, account, databases, storage, avatars } from "./config";
+// types
+import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
 
-// create Auth user
+// ============================================================
+// AUTH 
+// ============================================================
+
+// SIGN UP
 export async function createUserAccount(user: INewUser) {
   try {
     // create a new Auth User
@@ -36,7 +41,7 @@ export async function createUserAccount(user: INewUser) {
   }
 }
 
-// save user to DB
+// SAVE USER TO DB
 export async function saveUserToDB(user: {
   accountId: string;
   email: string;
@@ -49,10 +54,55 @@ export async function saveUserToDB(user: {
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
       ID.unique(),
-      user,
-    )
-    
+      user
+    );
+
     return newUser;
+  } catch (error) {
+    console.log(error);
+  }
+}
+// SIGN IN
+export async function signInAccount(user: { email: string; password: string }) {
+  // create session
+  try {
+    const session = await account.createEmailSession(user.email, user.password);
+    return session;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// GET ACCOUNT
+export async function getAccount() {
+  try {
+    const currentAccount = await account.get();
+    console.log(`currentAccount`,currentAccount);
+    return currentAccount;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// GET USER
+export async function getCurrentUser() {
+  try {
+    const currentAccount = await getAccount();
+    // if no current account
+    if (!currentAccount) throw Error;
+    
+    const currentUser = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      // query for the current user === 'accountId'
+      [Query.equal('accountId', currentAccount.$id)]
+      )
+      
+    // if no current user
+    if (!currentUser) throw Error;
+    // if current user exists
+    return currentUser.documents[0];
+    
   } catch (error) {
     console.log(error);
   }
