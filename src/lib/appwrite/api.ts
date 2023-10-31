@@ -4,7 +4,7 @@ import { account } from "./config";
 // types => interfaces
 import { INewUser } from "@/types";
 
-// fx in signup form that will connect to appwrite => create a user!
+// fx in signup form that will connect to appwrite => create a user
 export async function createUserAccount(user: INewUser) {
   try {
     // create a new account
