@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +12,11 @@
   }
 
   body {
-    @apply bg-dark-1 text-white min-h-screen font-inter;
+    @apply bg-[#161B22] text-white min-h-screen font-inter;
+  }
+  
+  p {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
@@ -223,7 +229,7 @@
   }
 
   .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
+    @apply rounded-lg base-medium hover:bg-blue-500 transition;
   }
 
   /* Post Card */
@@ -267,7 +273,7 @@
 
   /* Button */
   .shad-button_primary {
-    @apply bg-primary-500 hover:bg-primary-500 text-light-1 flex gap-2 !important;
+    @apply bg-blue-500 hover:bg-yellow-500 text-light-1 flex gap-2 !important;
   }
 
   .shad-button_dark_4 {

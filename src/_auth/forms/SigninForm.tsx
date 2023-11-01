@@ -31,15 +31,13 @@ const SigninForm = () => {
 
   const handleSignin = async (user: z.infer<typeof SigninValidation>) => {
     const session = await signInAccount(user);
-
-    if (!session) {
-      toast({ title: "Login failed. Please try again." });
-      
-      return;
-    }
-
     const isLoggedIn = await checkAuthUser();
-
+    
+    if (!session || !isLoggedIn) {
+      toast({ title: "Login failed. Please try again." });
+      return 
+    }
+    
     if (isLoggedIn) {
       form.reset();
 
@@ -54,7 +52,10 @@ const SigninForm = () => {
   return (
     <Form {...form}>
       <div className="sm:w-420 flex-center flex-col">
-        <img src="/assets/images/logo.svg" alt="logo" />
+        <div className="flex flex-col">
+        <img src="/assets/images/beppo.svg" width={250} alt="beppo, the penguin" className="relative top-10"/>
+        <img src="/assets/logo/mc-curved-up.svg" width={250} alt="logo" />
+        </div>
 
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
           Log in to your account

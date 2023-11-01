@@ -28,7 +28,6 @@ import {
   deleteSavedPost,
 } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
-import React from "react";
 
 // ============================================================
 // AUTH QUERIES

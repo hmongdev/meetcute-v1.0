@@ -76,7 +76,8 @@ export async function getAccount() {
 
     return currentAccount;
   } catch (error) {
-    console.log(error);
+    // what users see in console if there is no account
+    console.log(`Looks like you're a guest. Why not sign up? 😉`);
   }
 }
 
