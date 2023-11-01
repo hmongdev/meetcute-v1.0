@@ -12,6 +12,8 @@ import { useToast } from "../../components/ui/use-toast";
 import { useUserContext } from "../../context/AuthContext";
 import { useCreatePost, useUpdatePost } from "../../lib/react-query/queries";
 import { PostValidation } from "../../lib/validation";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 
 type PostFormProps = {
   post?: Models.Document;
