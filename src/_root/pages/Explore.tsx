@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
+// import { Input } from "@/components/ui";
 import { Input } from "@/components/ui";
-import useDebounce from "@/hooks/useDebounce";
+
+import useDebounce from "src/hooks/useDebounce";
 import { GridPostList, Loader } from "@/components/shared";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queries";
 
