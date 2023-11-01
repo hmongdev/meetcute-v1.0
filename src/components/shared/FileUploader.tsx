@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import { FileWithPath, useDropzone } from "react-dropzone";
-import React from "react";
 
 import { convertFileToUrl } from "@/lib/utils";
 import { Button } from "../ui/button";
