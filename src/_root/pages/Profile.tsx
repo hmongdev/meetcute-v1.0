@@ -1,18 +1,18 @@
 import {
-  Route,
-  Routes,
   Link,
   Outlet,
-  useParams,
+  Route,
+  Routes,
   useLocation,
+  useParams,
 } from "react-router-dom";
 
-import { Button } from "@/components/ui/button";
-import { LikedPosts } from "@/_root/pages";
-import { useUserContext } from "@/context/AuthContext";
-import { useGetUserById } from "@/lib/react-query/queries";
-import GridPostList from "@/components/shared/GridPostList";
-import Loader from "@/components/shared/Loader";
+import GridPostList from "../../components/shared/GridPostList";
+import Loader from "../../components/shared/Loader";
+import { Button } from "../../components/ui/button";
+import { useUserContext } from "../../context/AuthContext";
+import { useGetUserById } from "../../lib/react-query/queries";
+import LikedPosts from "../pages/LikedPosts";
 
 interface StabBlockProps {
   value: string | number;

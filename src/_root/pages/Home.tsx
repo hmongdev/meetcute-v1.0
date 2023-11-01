@@ -1,6 +1,8 @@
 import { Models } from "appwrite";
-import { Loader, PostCard, UserCard } from "@/components/shared";
-import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queries";
+import Loader from "../../components/shared/Loader";
+import PostCard from "../../components/shared/PostCard";
+import UserCard from "../../components/shared/UserCard";
+import { useGetRecentPosts, useGetUsers } from "../../lib/react-query/queries";
 
 const Home = () => {
   const {

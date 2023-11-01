@@ -1,7 +1,7 @@
-import * as z from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
+import * as z from "zod";
 
 import {
   Form,
@@ -11,13 +11,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useToast } from "@/components/ui/use-toast";
-import { Textarea, Input, Button } from "@/components/ui";
-import { ProfileUploader, Loader } from "@/components/shared";
-
-import { ProfileValidation } from "@/lib/validation";
-import { useUserContext } from "@/context/AuthContext";
-import { useGetUserById, useUpdateUser } from "@/lib/react-query/queries";
+import Loader from "../../components/shared/Loader";
+import ProfileUploader from "../../components/shared/ProfileUploader";
+import { Button, Input, Textarea } from "../../components/ui";
+import { useToast } from "../../components/ui/use-toast";
+import { useUserContext } from "../../context/AuthContext";
+import { useGetUserById, useUpdateUser } from "../../lib/react-query/queries";
+import { ProfileValidation } from "../../lib/validation";
 
 const UpdateProfile = () => {
   const { toast } = useToast();

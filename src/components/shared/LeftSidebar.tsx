@@ -1,11 +1,11 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
-import { INavLink } from "@/types";
-import { sidebarLinks } from "@/constants";
-import { Loader } from "@/components/shared";
 import { Button } from "@/components/ui/button";
+import { sidebarLinks } from "@/constants";
+import { INITIAL_USER, useUserContext } from "@/context/AuthContext";
 import { useSignOutAccount } from "@/lib/react-query/queries";
-import { useUserContext, INITIAL_USER } from "@/context/AuthContext";
+import { INavLink } from "@/types";
+import Loader from '../shared/Loader';
 
 const LeftSidebar = () => {
   const navigate = useNavigate();
@@ -27,11 +27,11 @@ const LeftSidebar = () => {
   return (
     <nav className="leftsidebar">
       <div className="flex flex-col gap-11">
-        <Link to="/" className="flex gap-3 items-center">
+        <Link to="/" className="flex gap-3 justify-center items-center">
           <img
-            src="/assets/logo/mc-curved.svg"
+            src="/assets/logo/mc-curved-up.svg"
             alt="logo"
-            width={10}
+            width={200}
             height={36}
           />
         </Link>
