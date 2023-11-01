@@ -1,7 +1,7 @@
 import { ID, Query } from "appwrite";
 
-import { appwriteConfig, account, databases, storage, avatars } from "./config";
-import { IUpdatePost, INewPost, INewUser, IUpdateUser } from "@/types";
+import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { account, appwriteConfig, avatars, databases, storage } from "./config";
 
 // ============================================================
 // AUTH
@@ -77,7 +77,7 @@ export async function getAccount() {
     return currentAccount;
   } catch (error) {
     // what users see in console if there is no account
-    console.log(`Looks like you're a guest. Why not sign up? 😉`);
+    console.log(`Oops. Looks like you're not signed in. Why not sign up? 😉`);
   }
 }
 

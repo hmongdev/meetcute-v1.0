@@ -1,5 +1,5 @@
 // UI for signin and signup forms
-import React, { Outlet, Navigate } from "react-router-dom"
+import { Navigate, Outlet } from "react-router-dom";
 
 const AuthLayout = () => {
   const isAuthenticated = false;
@@ -14,7 +14,7 @@ const AuthLayout = () => {
               <Outlet />
             </section>
             
-            <img src="/assets/images/side-img.svg" alt="logo" className="hidden lg:block h-screen w-1/2 object-cover bg-no-repeat"/>
+            {/* <img src="/assets/logo/side-img.svg" alt="logo" className="hidden lg:block h-screen w-1/2 object-cover bg-no-repeat"/> */}
             </>
     )}  
     </>
