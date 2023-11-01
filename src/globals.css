@@ -224,11 +224,11 @@
   }
 
   /* Left sidebar */
-  .leftsidebar {
+  .rightsidebar {
     @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
   }
 
-  .leftsidebar-link {
+  .rightsidebar-link {
     @apply rounded-lg base-medium hover:bg-blue-500 transition;
   }
 

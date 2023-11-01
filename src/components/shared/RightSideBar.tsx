@@ -1,13 +1,13 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
-import { Button } from "../../components/ui/button";
 import { sidebarLinks } from "../../constants";
 import { INITIAL_USER, useUserContext } from "../../context/AuthContext";
 import { useSignOutAccount } from "../../lib/react-query/queries";
 import { INavLink } from "../../types";
-import Loader from '../shared/Loader';
+import { Button } from "../ui/button";
+import Loader from './Loader';
 
-const LeftSidebar = () => {
+const RightSideBar = () => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const { user, setUser, setIsAuthenticated, isLoading } = useUserContext();
@@ -25,7 +25,7 @@ const LeftSidebar = () => {
   };
 
   return (
-    <nav className="leftsidebar">
+    <nav className="rightsidebar">
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 justify-center items-center">
           <img
@@ -61,7 +61,7 @@ const LeftSidebar = () => {
             return (
               <li
                 key={link.label}
-                className={`leftsidebar-link group ${
+                className={`rightsidebar-link group ${
                   isActive && "bg-primary-500"
                 }`}>
                 <NavLink
@@ -93,4 +93,4 @@ const LeftSidebar = () => {
   );
 };
 
-export default LeftSidebar;
+export default RightSideBar;
