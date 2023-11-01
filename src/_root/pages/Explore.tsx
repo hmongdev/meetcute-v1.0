@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import GridPostList from "../../components/shared/GridPostList";
 import Loader from "../../components/shared/Loader";
-import { Input } from '../../components/ui';
+import { Input } from '../../components/ui/input';
 import useDebounce from "../../hooks/useDebounce";
 import { useGetPosts, useSearchPosts } from "../../lib/react-query/queries";
 

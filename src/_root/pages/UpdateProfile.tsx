@@ -13,8 +13,10 @@ import {
 } from "@/components/ui/form";
 import Loader from "../../components/shared/Loader";
 import ProfileUploader from "../../components/shared/ProfileUploader";
-import { Button, Input, Textarea } from "../../components/ui";
+import { Button } from "../../components/ui/button";
 import { useToast } from "../../components/ui/use-toast";
+ProfileUploader
+
 import { useUserContext } from "../../context/AuthContext";
 import { useGetUserById, useUpdateUser } from "../../lib/react-query/queries";
 import { ProfileValidation } from "../../lib/validation";
