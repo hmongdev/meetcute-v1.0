@@ -17,6 +17,8 @@ import { Button } from "../../components/ui/button";
 import { useToast } from "../../components/ui/use-toast";
 ProfileUploader
 
+import { Input } from "../../components/ui/input";
+import { Textarea } from "../../components/ui/textarea";
 import { useUserContext } from "../../context/AuthContext";
 import { useGetUserById, useUpdateUser } from "../../lib/react-query/queries";
 import { ProfileValidation } from "../../lib/validation";

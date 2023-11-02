@@ -29,22 +29,22 @@ export const sidebarLinks = [
 export const bottombarLinks = [
   {
     imgURL: "/assets/icons/home.svg",
-    route: "/",
+    route: "/explore",
     label: "Home",
   },
-  {
-    imgURL: "/assets/icons/gallery-add.svg",
-    route: "/create-post",
-    label: "Post",
-  },
+  // {
+  //   imgURL: "/assets/icons/gallery-add.svg",
+  //   route: "/create-post",
+  //   label: "Post",
+  // },
   {
     imgURL: "/assets/icons/bookmark.svg",
-    route: "/pocket",
+    route: "",
     label: "Pocket",
   },
   {
     imgURL: "/assets/icons/chat.svg",
-    route: "/explore",
+    route: "/pocket",
     label: "Explore",
   },
   {

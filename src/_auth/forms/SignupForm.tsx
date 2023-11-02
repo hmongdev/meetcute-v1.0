@@ -77,10 +77,10 @@ const SignupForm = () => {
       <div className="sm:w-420 flex-center flex-col">
         <img src="/assets/logo/mc-curved-up.svg" width={250} alt="logo" />
         <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-          Create a new account
+          Create Account
         </h2>
-        <p className="text-light-3 small-medium md:base-regular mt-2">
-          Please create an account
+        <p className="w-full text-light-3 small-medium md:base-regular mt-2">
+          By tapping 'Sign Up', you agree with our <Link to="" className="underline">Terms of Services</Link>. Learn how we process your data in our <Link to="" className="underline">Privacy Policy</Link> and <Link to="" className="underline">Cookies Policy</Link>.
         </p>
 
         <form
