@@ -17,7 +17,7 @@ const Bottombar = () => {
             to={link.route === '/profile' ? `/profile/${user.id}` : link.route}
             className={`${
               isActive
-            } flex-center flex-col gap-1 p-2 transition`}>
+            } flex-center flex-col p-2 transition`}>
             <img
               src={link.imgURL}
               alt={link.label}

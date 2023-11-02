@@ -33,9 +33,9 @@ export const bottombarLinks = [
     label: "Home",
   },
   {
-    imgURL: "/assets/icons/search.svg",
-    route: "/explore",
-    label: "Explore",
+    imgURL: "/assets/icons/gallery-add.svg",
+    route: "/create-post",
+    label: "Post",
   },
   {
     imgURL: "/assets/icons/bookmark.svg",
@@ -43,9 +43,9 @@ export const bottombarLinks = [
     label: "Pocket",
   },
   {
-    imgURL: "/assets/icons/gallery-add.svg",
-    route: "/create-post",
-    label: "Post",
+    imgURL: "/assets/icons/chat.svg",
+    route: "/explore",
+    label: "Explore",
   },
   {
     imgURL: "/assets/icons/people.svg",
