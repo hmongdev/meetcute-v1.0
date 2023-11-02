@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 
 import { bottombarLinks } from "../../constants";
+import { useUserContext } from "../../context/AuthContext";
 
 const Bottombar = () => {
   const { pathname } = useLocation();
+  const { user } = useUserContext();
 
   return (
     <section className="bottom-bar">
@@ -12,19 +14,17 @@ const Bottombar = () => {
         return (
           <Link
             key={`bottombar-${link.label}`}
-            to={link.route}
+            to={link.route === '/profile' ? `/profile/${user.id}` : link.route}
             className={`${
-              isActive && "rounded-[10px] bg-primary-500 "
+              isActive
             } flex-center flex-col gap-1 p-2 transition`}>
             <img
               src={link.imgURL}
               alt={link.label}
-              width={16}
+              width={32}
               height={16}
               className={`${isActive && "invert-white"}`}
             />
-
-            <p className="tiny-medium text-light-2">{link.label}</p>
           </Link>
         );
       })}

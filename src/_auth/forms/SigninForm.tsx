@@ -56,13 +56,6 @@ const SigninForm = () => {
         <img src="/assets/images/beppo.svg" width={250} alt="beppo, the penguin" className="relative top-10"/>
         <img src="/assets/logo/mc-curved-up.svg" width={250} alt="logo" />
         </div>
-
-        <h2 className="h3-bold md:h2-bold pt-5 sm:pt-12">
-          Log in to your account
-        </h2>
-        <p className="text-light-3 small-medium md:base-regular mt-2">
-          Welcome back! Please enter your details.
-        </p>
         <form
           onSubmit={form.handleSubmit(handleSignin)}
           className="flex flex-col gap-5 w-full mt-4">
@@ -73,7 +66,7 @@ const SigninForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Email</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" {...field} />
+                  <Input type="text" className="shad-input" placeholder="Email"{...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -87,13 +80,17 @@ const SigninForm = () => {
               <FormItem>
                 <FormLabel className="shad-form_label">Password</FormLabel>
                 <FormControl>
-                  <Input type="password" className="shad-input" {...field} />
+                  <Input type="password" className="shad-input" placeholder="Password"{...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-
+            <Link
+              to="/"
+              className="flex justify-end text-primary-500 text-small-semibold ml-1">
+              Forgot Password?
+            </Link>
           <Button type="submit" className="shad-button_primary">
             {isLoading || isUserLoading ? (
               <div className="flex-center gap-2">
@@ -105,11 +102,11 @@ const SigninForm = () => {
           </Button>
 
           <p className="text-small-regular text-light-2 text-center mt-2">
-            Don&apos;t have an account?
+            Don't have an account?
             <Link
               to="/sign-up"
               className="text-primary-500 text-small-semibold ml-1">
-              Sign up
+              Sign up.
             </Link>
           </p>
         </form>

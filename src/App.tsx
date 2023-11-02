@@ -4,14 +4,14 @@ import CreatePost from "../src/_root/pages/CreatePost";
 import EditPost from "../src/_root/pages/EditPost";
 import Explore from "../src/_root/pages/Explore";
 import Home from "../src/_root/pages/Home";
+import Pocket from "../src/_root/pages/Pocket";
 import PostDetails from "../src/_root/pages/PostDetails";
-import Profile from "../src/_root/pages/Profile";
-import Saved from "../src/_root/pages/Saved";
 import UpdateProfile from "../src/_root/pages/UpdateProfile";
 import AuthLayout from "./_auth/AuthLayout";
 import SigninForm from "./_auth/forms/SigninForm";
 import SignupForm from "./_auth/forms/SignupForm";
 import RootLayout from "./_root/RootLayout";
+import Profile from "./_root/pages/Profile";
 import { Toaster } from "./components/ui/toaster";
 import "./globals.css";
 
@@ -29,7 +29,7 @@ const App = () => {
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
           <Route path="/explore" element={<Explore />} />
-          <Route path="/saved" element={<Saved />} />
+          <Route path="/pocket" element={<Pocket />} />
           <Route path="/all-users" element={<AllUsers />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:id" element={<EditPost />} />
