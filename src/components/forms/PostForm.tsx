@@ -35,9 +35,9 @@ const PostForm = ({ post, action }: PostFormProps) => {
   });
 
   // Query
-  const { mutateAsync: createPost, isLoading: isLoadingCreate } =
+  const { mutateAsync: createPost, isPending: isLoadingCreate } =
     useCreatePost();
-  const { mutateAsync: updatePost, isLoading: isLoadingUpdate } =
+  const { mutateAsync: updatePost, isPending: isLoadingUpdate } =
     useUpdatePost();
 
   // Handler
@@ -50,7 +50,7 @@ const PostForm = ({ post, action }: PostFormProps) => {
         imageId: post.imageId,
         imageUrl: post.imageUrl,
       });
-
+      
       if (!updatedPost) {
         toast({
           title: `${action} post failed. Please try again.`,
@@ -58,49 +58,33 @@ const PostForm = ({ post, action }: PostFormProps) => {
       }
       return navigate(`/posts/${post.$id}`);
     }
-
+    
     // ACTION = CREATE
-    const newPost = await createPost({
-      ...value,
-      userId: user.id,
-    });
-
-    if (!newPost) {
-      toast({
-        title: `${action} post failed. Please try again.`,
+      const newPost = await createPost({
+        ...value,
+        userId: user.id,
       });
-    }
-    navigate("/");
-  };
+      
+      if (!newPost) {
+        toast({
+          title: `${action} post failed. Please try again.`,
+        });
+      }
+      navigate("/");
+    };
 
   return (
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="flex flex-col gap-9 w-full  max-w-5xl">
-        <FormField
-          control={form.control}
-          name="caption"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="shad-form_label">Description</FormLabel>
-              <FormControl>
-                <Textarea
-                  className="shad-textarea custom-scrollbar"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage className="shad-form_message" />
-            </FormItem>
-          )}
-        />
-
+        className="flex flex-col gap-9 w-full max-w-5xl">
+        
         <FormField
           control={form.control}
           name="file"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="shad-form_label">Add Photos</FormLabel>
+              {/* <FormLabel className="shad-form_label">Add Photos</FormLabel> */}
               <FormControl>
                 <FileUploader
                   fieldChange={field.onChange}
@@ -111,6 +95,23 @@ const PostForm = ({ post, action }: PostFormProps) => {
             </FormItem>
           )}
         />
+      
+        <FormField
+        control={form.control}
+        name="caption"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel className="shad-form_label">Description</FormLabel>
+            <FormControl>
+              <Textarea
+                className="shad-textarea custom-scrollbar"
+                {...field}
+              />
+            </FormControl>
+            <FormMessage className="shad-form_message" />
+          </FormItem>
+        )}
+      />
 
         <FormField
           control={form.control}
