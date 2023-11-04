@@ -101,7 +101,8 @@ const Explore = () => {
           ))
         )}
       </div>
-
+      {/* install react-intersection-observer */}
+      {/* whenever user scrolls down to here, automatically loads next page */}
       {hasNextPage && !searchValue && (
         <div ref={ref} className="mt-10">
           <Loader />
