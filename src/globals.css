@@ -210,7 +210,7 @@
 
   /* Grid Post List */
   .grid-container {
-    @apply w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-7 max-w-5xl;
+    @apply w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-7 max-w-5xl;
   }
 
   .grid-post_link {
@@ -232,7 +232,7 @@
 
   /* Post Card */
   .post-card {
-    @apply bg-[#242526] rounded-3xl border border-dark-4 p-5 lg:p-7 w-full max-w-screen-sm;
+    @apply bg-[#242526] p-3 lg:p-7 w-full max-w-screen-sm rounded-lg;
   }
 
   .post-card_img {

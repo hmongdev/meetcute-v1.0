@@ -1,6 +1,6 @@
 import { ID, Query } from "appwrite";
 
-import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "@/types";
+import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "../../types";
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
 
 // ============================================================
@@ -229,6 +229,7 @@ export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
   const queries: any[] = [Query.orderDesc("$updatedAt"), Query.limit(9)];
 
   if (pageParam) {
+    // if we're at page 2, skip the first page and give the second page
     queries.push(Query.cursorAfter(pageParam.toString()));
   }
 

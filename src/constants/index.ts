@@ -32,15 +32,15 @@ export const bottombarLinks = [
     route: "/explore",
     label: "Home",
   },
-  // {
-  //   imgURL: "/assets/icons/gallery-add.svg",
-  //   route: "/create-post",
-  //   label: "Post",
-  // },
   {
     imgURL: "/assets/icons/bookmark.svg",
     route: "",
     label: "Pocket",
+  },
+  {
+    imgURL: "/assets/icons/gallery-add.svg",
+    route: "/create-post",
+    label: "Post",
   },
   {
     imgURL: "/assets/icons/chat.svg",
