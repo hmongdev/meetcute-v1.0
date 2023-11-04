@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { useUserContext } from "../../context/AuthContext";
+// import { useUserContext } from "../../context/AuthContext";
 import { useSignOutAccount } from "../../lib/react-query/queries";
 import { Button } from "../ui/button";
 
 const Topbar = () => {
   const navigate = useNavigate();
-  const { user } = useUserContext();
+  // const { user } = useUserContext();
   const { mutate: signOut, isSuccess } = useSignOutAccount();
 
   useEffect(() => {

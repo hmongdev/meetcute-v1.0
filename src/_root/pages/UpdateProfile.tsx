@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import * as z from "zod";
 
+import Loader from "../../components/shared/Loader";
+import ProfileUploader from "../../components/shared/ProfileUploader";
+import { Button } from "../../components/ui/button";
 import {
   Form,
   FormControl,
@@ -10,10 +13,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import Loader from "../../components/shared/Loader";
-import ProfileUploader from "../../components/shared/ProfileUploader";
-import { Button } from "../../components/ui/button";
+} from "../../components/ui/form";
 import { useToast } from "../../components/ui/use-toast";
 ProfileUploader
 
@@ -41,7 +41,7 @@ const UpdateProfile = () => {
 
   // Queries
   const { data: currentUser } = useGetUserById(id || "");
-  const { mutateAsync: updateUser, isLoading: isLoadingUpdate } =
+  const { mutateAsync: updateUser, isPending: isLoadingUpdate } =
     useUpdateUser();
 
   if (!currentUser)
