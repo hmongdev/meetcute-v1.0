@@ -3,7 +3,7 @@ import { useInView } from "react-intersection-observer";
 
 import GridPostList from "../../components/shared/GridPostList";
 import Loader from "../../components/shared/Loader";
-import { Input } from '../../components/ui/input';
+import { Input } from "../../components/ui/input";
 import useDebounce from "../../hooks/useDebounce";
 import { useGetPosts, useSearchPosts } from "../../lib/react-query/queries";
 
@@ -52,7 +52,7 @@ const Explore = () => {
   return (
     <div className="explore-container">
       <div className="explore-inner_container">
-        <h2 className="h3-bold md:h2-bold w-full">Explore</h2>
+        <h2 className="h3-bold md:h2-bold w-full">Search Posts</h2>
         <div className="flex gap-1 px-4 w-full rounded-lg bg-dark-4">
           <img
             src="/assets/icons/search.svg"
@@ -65,7 +65,7 @@ const Explore = () => {
             placeholder="Search"
             className="explore-search"
             value={searchValue}
-            onChange={(e) => {
+            onChange={(e:any) => {
               const { value } = e.target;
               setSearchValue(value);
             }}
@@ -101,8 +101,7 @@ const Explore = () => {
           ))
         )}
       </div>
-      {/* install react-intersection-observer */}
-      {/* whenever user scrolls down to here, automatically loads next page */}
+
       {hasNextPage && !searchValue && (
         <div ref={ref} className="mt-10">
           <Loader />
