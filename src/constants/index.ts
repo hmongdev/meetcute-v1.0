@@ -29,12 +29,12 @@ export const sidebarLinks = [
 export const bottombarLinks = [
   {
     imgURL: "/assets/icons/home.svg",
-    route: "/explore",
+    route: "/",
     label: "Home",
   },
   {
     imgURL: "/assets/icons/bookmark.svg",
-    route: "",
+    route: "/pocket",
     label: "Pocket",
   },
   {
@@ -43,8 +43,8 @@ export const bottombarLinks = [
     label: "Post",
   },
   {
-    imgURL: "/assets/icons/chat.svg",
-    route: "/pocket",
+    imgURL: "/assets/icons/search.svg",
+    route: "/explore",
     label: "Explore",
   },
   {
